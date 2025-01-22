@@ -4,11 +4,12 @@ isAlive = false
 gotBlackJack = false
 let player = {
     name: "Jane Doe",
-    money: generateCash(),
+    money: "$200",
 }
 let messageEl = document.getElementById("message-el")
 let cardEl = document.getElementById('my-cards')
 let sumEl = document.getElementById("total-el")
+let playerEl = document.getElementById('player-el')
 
 function generateCards() {
     let randomCard = Math.floor(Math.random() * 13) + 1
@@ -46,6 +47,7 @@ function showGameStatus() {
     } else if (totalCards === 21) {
         message = "Wooho! Black jack! you win 🎊"
         gotBlackJack = true
+        playerEl.textContent = "Congratulations" + " "+ player.name + "! "+ "Your cashout is " + player.money
     } else {
         message = "Would you like to pick a new card?"
         isAlive = true
@@ -60,9 +62,4 @@ function pickNewCard() {
     playerCards.push(newCard)
     showGameStatus()
     }
-}
-
-function generateCash(){
-    let cash = Math.floor(Math.random() * 100) + 100
-    
 }

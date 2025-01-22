@@ -27,3 +27,7 @@ body{
     margin-left: 10px;
     margin-right: 10px;
 }
+#player-el{
+    color: #f14f14;
+    font-style: italic;
+}
